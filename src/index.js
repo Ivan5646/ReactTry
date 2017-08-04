@@ -11,6 +11,7 @@ import registerServiceWorker from './registerServiceWorker';
 //   document.getElementById('root')
 // );
 
+// https://facebook.github.io/react/docs/thinking-in-react.html
 
 class ProductCategoryRow extends React.Component {
   render() {
@@ -38,9 +39,9 @@ class ProductTable extends React.Component {
   render() {
     var rows = [];
     var lastCategory = null;
-    this.props.products.forEach(function(product) {
-      if (product.category !== lastCategory) {
-        rows.push(<ProductCategoryRow category={product.category} key={product.category} />);
+    this.props.products.forEach(function(product) { // products becoming PRODUCTS lower in FilterableProductTable...
+      if (product.category !== lastCategory) { 
+        rows.push(<ProductCategoryRow category={product.category} key={product.category} />); 
       }
       rows.push(<ProductRow product={product} key={product.name} />);
       lastCategory = product.category;
@@ -79,7 +80,7 @@ class FilterableProductTable extends React.Component {
     return (
       <div>
         <SearchBar />
-        <ProductTable products={this.props.products} />
+        <ProductTable products={this.props.products} /> {/* products == PRODUCTS */}
       </div>
     );
   }
@@ -98,10 +99,6 @@ ReactDOM.render(
   <FilterableProductTable products={PRODUCTS} />,
   document.getElementById('root') // changed to root
 );
-
-
-registerServiceWorker();
-
 
 
 registerServiceWorker();
