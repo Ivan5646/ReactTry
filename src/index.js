@@ -6,10 +6,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 class TaskRow extends React.Component {
   render () {
-    var myArray = JSON.stringify(taskArray);
     return (
       <tr>
-        <td>{myArray}</td> {/* should pass taskArray at some point... */}
+        <td>{JSON.stringify(this.props.tasks)}</td> {/* should pass taskArray at some point... */}
         <td>table cell</td>
       </tr>
     );
@@ -29,7 +28,7 @@ class TaskRow extends React.Component {
 var taskArray = [{task: "read a book", completed: "false"}, {task: "go to the gym", true: "false"}, {task: "go for a walk", completed: "false"}]; 
 
 ReactDOM.render(
-  <TaskRow tasks={taskArray} />,
+  <TaskRow tasks={taskArray}/>,
   document.getElementById('root') // changed to root
 );
 
