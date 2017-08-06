@@ -4,6 +4,17 @@ import './index.css';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+class SearchBar extends React.Component { // search implement later first do the checkbox
+  render () {
+    return (
+        <form>
+          <input type="text" placeholder="Search..."/> 
+          <p><input type="checkbox"/>{' '} Only incompleted tasks</p>
+        </form>
+      )
+  }
+}
+
 class TaskRow extends React.Component {
   render () {
     return (
@@ -30,10 +41,21 @@ class Table extends React.Component {
   }
 }
 
+class FilterableTable extends React.Component {
+ render () {
+   return (
+      <div>
+        <SearchBar/>
+        <Table tasks={taskArray}/> 
+      </div>
+    )
+  }
+}
+
 var taskArray = [{task: "read a book", completed: "false"}, {task: "go to the gym", completed: "true"}, {task: "go for a walk", completed: "false"}]; 
 
 ReactDOM.render(
-  <Table tasks={taskArray}/>,
+  <FilterableTable/>,
   document.getElementById('root') 
 );
 

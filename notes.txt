@@ -1,0 +1,19 @@
+Todo
+Scope
+- user unput to show only uncomleted tasks when ckecked
+- tick completed / incompleted
+
+Outline
+Dynamic vercion
+- tick completed tasks
+- save cpmpleted tasks, how?
+
+features
+- filter completed / incompleted
+
+possible features
+- date when task was added
+- sort tasks alphabetically, according to the date
+
+Problems
+- proxyConsole.js:56 Warning: validateDOMNesting(...): Whitespace text nodes cannot appear as a child of <tr>. Make sure you don't have any extra whitespace between tags on each line of your source code. See Table > TaskRow > tr > #text. 
