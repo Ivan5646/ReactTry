@@ -8,8 +8,8 @@ class TaskRow extends React.Component {
   render () {
     return (
       <tr>
-        <td>{this.props.task.task}</td> {/* should pass taskArray at some point... */}
-        <td>{this.props.task.completed}</td>
+        <td>{this.props.taskUnit.task}</td> {/* taskArray passed in the Table component */}
+        <td>{this.props.taskUnit.completed}</td>
       </tr>
     );
   }
@@ -18,9 +18,8 @@ class TaskRow extends React.Component {
 class Table extends React.Component {
   render () {
     var rows = [];
-    this.props.tasks.forEach(function(task){
-      //rows.push(task.task, task.completed);
-      rows.push(<TaskRow task={task}/>)
+    this.props.tasks.forEach(function(taskUnit){
+      rows.push(<TaskRow taskUnit={taskUnit} key={taskUnit.task}/>) // should have key property, otherwise giving warning
     });
     console.log(rows);
     return (
