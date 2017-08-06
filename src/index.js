@@ -21,7 +21,7 @@ class Table extends React.Component {
     this.props.tasks.forEach(function(task){
       rows.push(task.task, task.completed);
     });
-    
+    console.log(rows);
     return (
       <table>
         <tbody>{rows}</tbody>
@@ -30,7 +30,7 @@ class Table extends React.Component {
   }
 }
 
-var taskArray = [{task: "read a book", completed: "false"}, {task: "go to the gym", true: "false"}, {task: "go for a walk", completed: "false"}]; 
+var taskArray = [{task: "read a book", completed: "false"}, {task: "go to the gym", completed: "true"}, {task: "go for a walk", completed: "false"}]; 
 
 ReactDOM.render(
   <Table tasks={taskArray}/>,
