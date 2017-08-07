@@ -1,7 +1,7 @@
 Todo
 Scope
 - user unput to show only uncomleted tasks when ckecked
-- tick completed / incompleted
+- tick completed / incompleted and cross the completed out
 
 Outline
 Dynamic vercion
