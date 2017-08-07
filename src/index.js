@@ -12,6 +12,7 @@ class Completed extends React.Component {
   }
   chagneStatus() {
     console.log("task status has been changed");
+    // change this.props.taskUnit.completed. Well, first you have to get this.props.taskUnit.completed in td? Or bind somehow Completed component to the current this.props.taskUnit.completed...?
   }
   render() {
     return (
@@ -36,7 +37,7 @@ class TaskRow extends React.Component {
     return (
       <tr>
         <td>{this.props.taskUnit.task}</td> {/* taskArray passed in the Table component */}
-        <td><Completed/></td> {/* add here? checkbox with event listener or component with checkbox and event listener */}
+        <td><Completed/></td> {/* pass this.props.taskUnit.completed to Completed. So what I do about? Just save it? I have to save the whole array or what? Need to save state for every taskUnit */}
       </tr>
     );
   }
