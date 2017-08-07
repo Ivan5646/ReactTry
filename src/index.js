@@ -4,6 +4,24 @@ import './index.css';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+class NewTask extends React.Component {
+  constructor(props) {
+    super(props); 
+    this.createTask = this.createTask.bind(this);
+  }
+  createTask(e) {
+    if (13 == e.keyCode) {
+      var newTask = document.getElementById("newTask").value;
+      console.log(newTask);
+    }
+  }
+  render() {
+    return (
+      <input id="newTask" type="text" placeholder="new task..." onKeyDown={this.createTask}/> // on Enter event create new task
+    )
+  }
+}
+
 class Completed extends React.Component {
   constructor(props) {
     super(props); // don't know what it is for
@@ -63,6 +81,7 @@ class FilterableTable extends React.Component {
    return (
       <div>
         <SearchBar/>
+        <NewTask/>
         <Table tasks={taskArray}/> 
       </div>
     )
