@@ -13,6 +13,8 @@ class NewTask extends React.Component {
     if (13 == e.keyCode) {
       var newTask = document.getElementById("newTask").value;
       console.log(newTask);
+
+
     }
   }
   render() {
@@ -77,12 +79,18 @@ class Table extends React.Component {
 }
 
 class FilterableTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: taskArray
+    };
+  }
  render() {
    return (
       <div>
         <SearchBar/>
         <NewTask/>
-        <Table tasks={taskArray}/> 
+        <Table tasks={this.state.items}/> 
       </div>
     )
   }
